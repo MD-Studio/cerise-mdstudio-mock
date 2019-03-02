@@ -1,0 +1,182 @@
+Gromacs RC file: /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/GMXRC.bash
+Gromacs executable: /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi 
+# No maximum runtime set. Will run until finished or until crash.
+
+# Sun Jan 27 17:17:04 2019 
+# Command:
+/home/lveen/.cerise/api/mdstudio/files/gromit/gromit_mpi.sh -gmxrc /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/GMXRC.bash -np 8 -vsite -lie -l /tmp/cerise_runner_l0bwd4gb/compound.pdb,/tmp/cerise_runner_l0bwd4gb/compound_ref.itp -f /tmp/cerise_runner_l0bwd4gb/protein.pdb -top /tmp/cerise_runner_l0bwd4gb/protein.top -ff gromos45a3 -d 2.25 -p 1.0 -prfc 200,200 -ptau 1.0 -at 0.05 -conc 0.1539976 -time 0.001 -solvent default -t 200,300 -ttau 0.1
+
+# Input structure:     /tmp/cerise_runner_l0bwd4gb/protein.pdb
+# Input topology:      /tmp/cerise_runner_l0bwd4gb/protein.top
+# Base name:           protein
+# Source directory:    /tmp/cerise_runner_l0bwd4gb
+# Command issued from: /tmp/cerise_runner_l0bwd4gb
+# Run directory:       /tmp/cerise_runner_l0bwd4gb
+
+# GROMACS 
+#=========
+# - binaries:  /home/lveen/.cerise/api/mdstudio/files/gromacs/bin
+# - data:      /home/lveen/.cerise/api/mdstudio/files/gromacs/share/gromacs
+# - libraries: 
+
+# Starting at step 0:    TOPOLOGY
+# Stopping at step 11:    ANALYSIS
+# Starting MD protocol for /tmp/cerise_runner_l0bwd4gb/protein.pdb
+# Using gromos force field gromos45a3 with spc water model
+# Inferring electrostatics treatment from force field family (check mdp files)
+# Using virtual sites
+# Simulations will be performed in a rhombic dodecahedron unit cell
+
+#-------------------------------------
+#---= THIS IS WHERE WE START MD =--- 
+#-------------------------------------
+# Topology file protein.top provided for structure protein.pdb. Skipping step 1A.
+
+#---------------------------------------------------
+#---STEP 1B: ADD LIGANDS SPECIFIED ON COMMAND LINE 
+#---------------------------------------------------
+Adding Ligands
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+Read 18 atoms
+No velocities found
+# Sun Jan 27 17:17:05 CET 2019: Added 1 ligands to coordinate and topology file
+
+#---------------------------------------------
+#---STEP 2: SET PERIODIC BOUNDARY CONDITIONS 
+#---------------------------------------------
+echo 0 0 0 | /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi editconf -f /tmp/cerise_runner_l0bwd4gb/protein-lig.gro -o protein-pbc.gro -bt dodecahedron -d 1.125 -c 
+
+#-----------------------------
+#---STEP 3: RUN EM IN VACUUM 
+#-----------------------------
+# Sun Jan 27 17:17:05 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f em-vac.mdp -po em-vac-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-pbc.gro -p /tmp/cerise_runner_l0bwd4gb/protein-lig.top  -o protein-EMv.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-EMv -c protein-EMv.gro -cpi protein-EMv.cpt   -maxh -1
+
+# Sun Jan 27 17:17:06 2019 MDS 29060 : MDRUN PID: 29221
+# Sun Jan 27 17:17:12 CET 2019: FINISHED MDRUNNER (STEP EMVACUUM)
+
+#--------------------------------------
+#---STEP 4: SOLVATION AND ADDING IONS 
+#--------------------------------------
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi solvate -cp /tmp/cerise_runner_l0bwd4gb/protein-EMv.gro -cs -o protein-sol-b4ions.gro
+# Solvent added: 22961 molecules
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -v -f empty.mdp -c protein-sol-b4ions.gro -p protein-sol-b4ions.top -o protein-sol-b4ions.tpr -po defaults.mdp -maxwarn -1
+# LIEing: Excluding ligand from charge calculation
+# Net charge of system: 0
+# Replacing 126 solvent molecules with 63 NA(+1) and 63 CL(-1) ions.
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi genion -s protein-sol-b4ions.tpr -o protein-sol.gro -n sol.ndx -pname NA -nname CL -np 63 -nn 63 -pq 1 -nq -1 -rmin 0.5
+Moleculetype definitions for NA and CL found in topology file
+
+#-------------------------------------------
+#---STEP 5: ENERGY MINIMIZATION IN SOLVENT 
+#-------------------------------------------
+# Sun Jan 27 17:17:19 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f em-sol.mdp -po em-sol-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-sol.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top  -o protein-EMs.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-EMs -c protein-EMs.gro -cpi protein-EMs.cpt   -maxh -1
+
+# Sun Jan 27 17:17:21 2019 MDS 29060 : MDRUN PID: 29460
+# Sun Jan 27 17:17:44 CET 2019: FINISHED MDRUNNER (STEP EMSOLVENT)
+
+#----------------------------------------------------------------------------
+#---STEP 6: POSITION RESTRAINT MD, NVT -- CYCLE THROUGH PRFC AND TEMP/TAU_T 
+#----------------------------------------------------------------------------
+#
+#            Equilibration (NVT/PR):
+#                Coupling:                Solute Solvent
+#                Temperatures:            200 300
+#                Coupling times:          0.1
+#                Position restraint Fcs:  200 200
+#
+
+# NVT Equilibration at 200 Kelvin (tau_t=0.1) with Position restraint force 200 
+#-------------------------------------------------------------------------------
+# Sun Jan 27 17:17:45 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f pr-200-nvt-200-0.1.mdp -po pr-200-nvt-200-0.1-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-EMs.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-PR-200-NVT-200-0.1.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-PR-200-NVT-200-0.1 -c protein-PR-200-NVT-200-0.1.gro -cpi protein-PR-200-NVT-200-0.1.cpt   -maxh -1
+
+# Sun Jan 27 17:17:46 2019 MDS 29060 : MDRUN PID: 29597
+# Sun Jan 27 17:20:44 CET 2019: FINISHED MDRUNNER (STEP NVT-PR)
+
+# NVT Equilibration at 300 Kelvin (tau_t=0.1) with Position restraint force 200 
+#-------------------------------------------------------------------------------
+# Sun Jan 27 17:20:44 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f pr-200-nvt-300-0.1.mdp -po pr-200-nvt-300-0.1-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-PR-200-NVT-200-0.1.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-PR-200-NVT-300-0.1.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-PR-200-NVT-300-0.1 -c protein-PR-200-NVT-300-0.1.gro -cpi protein-PR-200-NVT-300-0.1.cpt   -maxh -1
+
+# Sun Jan 27 17:20:45 2019 MDS 29060 : MDRUN PID: 29966
+# Sun Jan 27 17:23:44 CET 2019: FINISHED MDRUNNER (STEP NVT-PR)
+
+#----------------------------------------------------------------------
+#---STEP 7: UNRESTRAINED MD 20 ps NPT -- CYCLE THROUGH PRESSURE/TAU_P 
+#----------------------------------------------------------------------
+#
+#            Equilibration (NpT):
+#                Pressures:       1.0
+#                Coupling times:  1.0
+#
+
+# NpT Equilibration at 1.0 bar (tau_p=1.0) 
+#------------------------------------------
+# Sun Jan 27 17:23:44 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f npt-1.0-1.0.mdp -po npt-1.0-1.0-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-PR-200-NVT-300-0.1.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-NPT-1.0-1.0.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-NPT-1.0-1.0 -c protein-NPT-1.0-1.0.gro -cpi protein-NPT-1.0-1.0.cpt   -maxh -1
+
+# Sun Jan 27 17:23:46 2019 MDS 29060 : MDRUN PID: 30228
+# Sun Jan 27 17:26:48 CET 2019: FINISHED MDRUNNER (STEP NPT)
+
+#--------------------------------------------------
+#---STEP 8: SHORT RUN UNDER PRODUCTION CONDITIONS 
+#--------------------------------------------------
+# Sun Jan 27 17:26:48 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f md-pre.mdp -po md-pre-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-NPT-1.0-1.0.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-MD-PRE.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-MD-PRE -c protein-MD-PRE.gro -cpi protein-MD-PRE.cpt   -maxh -1
+
+# Sun Jan 27 17:26:49 2019 MDS 29060 : MDRUN PID: 30583
+# Sun Jan 27 17:29:52 CET 2019: FINISHED MDRUNNER (STEP PREPRODUCTION)
+
+#---------------------------
+#---STEP 9: PRODUCTION RUN 
+#---------------------------
+# Sun Jan 27 17:29:52 2019 MDS 29060 : MDRUNNER
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f md-prod.mdp -po md-prod-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-MD-PRE.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-MD.tpr  -maxwarn -1
+
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-MD -c protein-MD.gro -cpi protein-MD.cpt -noappend  -maxh -1
+
+# Sun Jan 27 17:29:54 2019 MDS 29060 : MDRUN PID: 30844
+# Sun Jan 27 17:30:07 CET 2019: MDRUN EXITED (STEP PRODUCTION), BUT RUN NOT COMPLETE
+# Sun Jan 27 17:30:07 2019 MDS 29060 : Wrapping up and exiting.
+# Deleting redundant files:
+compound.pdb.gro          protein-EMv.tpr           protein-EMv.edr           protein-EMv.log           protein-EMv.trr          
+em-vac-out.mdp            protein-sol-b4ions.gro    protein-sol-b4ions.top    protein-sol-b4ions.tpr    sol-b4ions.ndx           
+genion_node0.log          empty.mdp                 defaults.mdp              charge.ndx                protein-sol-b4ions-noligand.tpr
+protein-EMs.tpr           protein-EMs.edr           protein-EMs.log           protein-EMs.trr           em-sol-out.mdp           
+#*#                                                                                                                              
+# Sun Jan 27 17:30:07 2019 MDS 29060 : gromit_mpi.sh finished successfully

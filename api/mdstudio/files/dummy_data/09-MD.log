@@ -1,0 +1,239 @@
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -f md-prod.mdp -po md-prod-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-MD-PRE.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-MD.tpr  -maxwarn -1
+: << __GROMPP__
+[node065:30818] [[31390,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31390,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+                      :-) GROMACS - gmx grompp, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi grompp -f md-prod.mdp -po md-prod-out.mdp -c /tmp/cerise_runner_l0bwd4gb/protein-MD-PRE.gro -p /tmp/cerise_runner_l0bwd4gb/protein-sol.top -n /tmp/cerise_runner_l0bwd4gb/protein-sol.ndx -o protein-MD.tpr -maxwarn -1
+
+
+NOTE 1 [file md-prod.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+Setting the LD random seed to -235645156
+Generated 1326 of the 1326 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 1326 of the 1326 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'ref_conf_1'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 3 bonded neighbours molecule type 'compound_2ac'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 1 bonded neighbours molecule type 'NA'
+Excluding 1 bonded neighbours molecule type 'CL'
+
+NOTE 2 [file protein-sol.top, line 73178]:
+  System has non-zero total charge: 6.999712
+  Total charge should normally be an integer. See
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+  
+
+
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group Solute is 15481.70
+Number of degrees of freedom in T-Coupling group Solvent is 137385.30
+
+There were 2 notes
+
+GROMACS reminds you: "Sisters Have Always Fascinated Me" (Speech)
+
+turning all bonds into constraints...
+turning all bonds into constraints...
+turning all bonds into constraints...
+turning all bonds into constraints...
+turning all bonds into constraints...
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 300 K
+Calculated rlist for 1x1 atom pair-list as 1.415 nm, buffer size 0.015 nm
+Set rlist, assuming 4x4 atom pair-list, to 1.408 nm, buffer size 0.008 nm
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+This run will generate roughly 7 Mb of data
+__GROMPP__
+/cm/shared/apps/openmpi/gcc/64/1.8.1/bin/mpirun -np 4 --map-by ppr:2:socket -v --display-map --display-allocation /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi mdrun -v -nice 0 -deffnm protein-MD -c protein-MD.gro -cpi protein-MD.cpt -noappend  -maxh -1
+
+======================   ALLOCATED NODES   ======================
+	node065: slots=4 max_slots=0 slots_inuse=0
+=================================================================
+ Data for JOB [31360,1] offset 0
+
+ ========================   JOB MAP   ========================
+
+ Data for node: node065	Num slots: 4	Max slots: 0	Num procs: 4
+ 	Process OMPI jobid: [31360,1] App: 0 Process rank: 0
+ 	Process OMPI jobid: [31360,1] App: 0 Process rank: 1
+ 	Process OMPI jobid: [31360,1] App: 0 Process rank: 2
+ 	Process OMPI jobid: [31360,1] App: 0 Process rank: 3
+
+ =============================================================
+--------------------------------------------------------------------------
+[[31360,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: usNIC
+  Host: node065
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+                      :-) GROMACS - gmx mdrun, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi mdrun -v -nice 0 -deffnm protein-MD -c protein-MD.gro -cpi protein-MD.cpt -noappend -maxh -1
+
+Warning: No checkpoint file found with -cpi option. Assuming this is a new run.
+
+No previous checkpoint file present, assuming this is a new run.
+Checkpoint file is from part 0, new output files will be suffixed '.part0001'.
+
+NOTE: Error occurred during GPU detection:
+      unknown error
+      Can not use GPU acceleration, will fall back to CPU kernels.
+
+
+Running on 1 node with total 16 cores, 32 logical cores, 0 compatible GPUs
+Hardware detected on host node065 (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+
+  Hardware topology: Basic
+
+Reading file protein-MD.tpr, VERSION 2016.4 (single precision)
+Using 4 MPI processes
+Using 8 OpenMP threads per MPI process
+
+
+Non-default thread affinity set probably by the OpenMP library,
+disabling internal thread affinity
+starting mdrun 'ref_conf_1'
+250 steps,      1.0 ps.
+step 0
+[node065:30844] 3 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node065:30844] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[node065:30844] 3 more processes have sent help message help-mpi-btl-openib.txt / reg mem limit low
+imb F  2% step 100, remaining wall clock time:     6 s          
+imb F  2% step 200, remaining wall clock time:     2 s          
+imb F  3% 
+Writing final coordinates.
+step 250, remaining wall clock time:     0 s          
+
+ Average load imbalance: 3.3 %
+ Part of the total run time spent waiting due to load imbalance: 0.7 %
+
+
+NOTE: 7 % of the run time was spent in domain decomposition,
+      39 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:      363.993       11.375     3200.0
+                 (ns/day)    (hour/ns)
+Performance:        7.626        3.147
+
+GROMACS reminds you: "The lovliest theories are being overthrown by these damned experiments; it is no fun being a chemist any more." (Justus von Liebig, letter to J.J. Berzelius 1834)
+
+__MDRUN__
+# Sun Jan 27 17:30:07 CET 2019: MDRUN EXITED (STEP PRODUCTION), BUT RUN NOT COMPLETE

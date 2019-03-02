@@ -1,0 +1,612 @@
+ERROR:root:[node065:31131] [[31591,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31591,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                      :-) GROMACS - gmx grompp, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_p265gyi1/chunk_0
+Command line:
+  gmx_mpi grompp -f /tmp/cerise_runner_p265gyi1/chunk_0/decompose.mdp -c /tmp/cerise_runner_p265gyi1/protein-sol.gro -p /tmp/cerise_runner_p265gyi1/protein-sol.top -n /tmp/cerise_runner_p265gyi1/chunk_0/decompose.ndx -o /tmp/cerise_runner_p265gyi1/chunk_0/decompose.tpr -maxwarn 2
+
+
+NOTE 1 [file /tmp/cerise_runner_p265gyi1/chunk_0/decompose.mdp, line 60]:
+  /tmp/cerise_runner_p265gyi1/chunk_0/decompose.mdp did not specify a value
+  for the .mdp option "cutoff-scheme". Probably it was first intended for
+  use with GROMACS before 4.6. In 4.6, the Verlet scheme was introduced,
+  but the group scheme was still the default. The default is now the Verlet
+  scheme, so you will observe different behaviour.
+
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+Replacing old mdp entry 'xtc-precision' by 'compressed-x-precision'
+
+NOTE 2 [file /tmp/cerise_runner_p265gyi1/chunk_0/decompose.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+
+NOTE 3 [file /tmp/cerise_runner_p265gyi1/chunk_0/decompose.mdp]:
+  For a correct single-point energy evaluation with nsteps = 0, use
+  continuation = yes to avoid constraining the input coordinates.
+
+Setting the LD random seed to 955482929
+Generated 1326 of the 1326 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 1326 of the 1326 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'ref_conf_1'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 3 bonded neighbours molecule type 'compound_2ac'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 1 bonded neighbours molecule type 'NA'
+Excluding 1 bonded neighbours molecule type 'CL'
+
+NOTE 4 [file protein-sol.top, line 73178]:
+  System has non-zero total charge: 6.999712
+  Total charge should normally be an integer. See
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+  
+
+
+
+NOTE 5 [file protein-sol.top, line 73178]:
+  For energy conservation with LINCS, lincs_iter should be 2 or larger.
+
+
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group rest is 152867.00
+
+NOTE 6 [file /tmp/cerise_runner_p265gyi1/chunk_0/decompose.mdp]:
+  NVE simulation with an initial temperature of zero: will use a Verlet
+  buffer of 10%. Check your energy drift!
+
+
+There were 6 notes
+
+GROMACS reminds you: "All I Ever Wanted Was Your Life" (Red Hot Chili Peppers)
+
+
+ERROR:root:[node065:31149] [[31569,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31569,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                      :-) GROMACS - gmx mdrun, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_p265gyi1/chunk_0
+Command line:
+  gmx_mpi mdrun -nice 0 -ntomp 16 -s /tmp/cerise_runner_p265gyi1/chunk_0/decompose.tpr -rerun /tmp/cerise_runner_p265gyi1/protein-MD.part0001.trr -deffnm decompose
+
+
+NOTE: Error occurred during GPU detection:
+      unknown error
+      Can not use GPU acceleration, will fall back to CPU kernels.
+
+
+Running on 1 node with total 16 cores, 32 logical cores, 0 compatible GPUs
+Hardware detected on host node065 (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+
+  Hardware topology: Basic
+
+Reading file /tmp/cerise_runner_p265gyi1/chunk_0/decompose.tpr, VERSION 2016.4 (single precision)
+Using 1 MPI process
+Using 16 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin thread to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+
+NOTE: Thread affinity setting failed. This can cause performance degradation.
+      If you think your settings are correct, ask on the gmx-users list.
+
+starting md rerun 'ref_conf_1', reading coordinates from input trajectory '/tmp/cerise_runner_p265gyi1/protein-MD.part0001.trr'
+
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   
+WARNING: Some frames do not contain velocities.
+         Ekin, temperature and pressure are incorrect,
+         the virial will be incorrect when constraints are present.
+
+Last frame          0 time    0.000   
+
+NOTE: 49 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        2.696        0.169     1600.0
+                 (ns/day)    (hour/ns)
+Performance:        0.513       46.809
+
+GROMACS reminds you: "I was elected to lead, not to read" (President A. Schwarzenegger)
+
+
+INFO:root:--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+
+ERROR:root:[node065:31174] [[31546,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31546,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                      :-) GROMACS - gmx grompp, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_p265gyi1/chunk_1
+Command line:
+  gmx_mpi grompp -f /tmp/cerise_runner_p265gyi1/chunk_1/decompose.mdp -c /tmp/cerise_runner_p265gyi1/protein-sol.gro -p /tmp/cerise_runner_p265gyi1/protein-sol.top -n /tmp/cerise_runner_p265gyi1/chunk_1/decompose.ndx -o /tmp/cerise_runner_p265gyi1/chunk_1/decompose.tpr -maxwarn 2
+
+
+NOTE 1 [file /tmp/cerise_runner_p265gyi1/chunk_1/decompose.mdp, line 60]:
+  /tmp/cerise_runner_p265gyi1/chunk_1/decompose.mdp did not specify a value
+  for the .mdp option "cutoff-scheme". Probably it was first intended for
+  use with GROMACS before 4.6. In 4.6, the Verlet scheme was introduced,
+  but the group scheme was still the default. The default is now the Verlet
+  scheme, so you will observe different behaviour.
+
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+Replacing old mdp entry 'xtc-precision' by 'compressed-x-precision'
+
+NOTE 2 [file /tmp/cerise_runner_p265gyi1/chunk_1/decompose.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+
+NOTE 3 [file /tmp/cerise_runner_p265gyi1/chunk_1/decompose.mdp]:
+  For a correct single-point energy evaluation with nsteps = 0, use
+  continuation = yes to avoid constraining the input coordinates.
+
+Setting the LD random seed to -294890822
+Generated 1326 of the 1326 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 1326 of the 1326 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'ref_conf_1'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 3 bonded neighbours molecule type 'compound_2ac'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 1 bonded neighbours molecule type 'NA'
+Excluding 1 bonded neighbours molecule type 'CL'
+
+NOTE 4 [file protein-sol.top, line 73178]:
+  System has non-zero total charge: 6.999712
+  Total charge should normally be an integer. See
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+  
+
+
+
+NOTE 5 [file protein-sol.top, line 73178]:
+  For energy conservation with LINCS, lincs_iter should be 2 or larger.
+
+
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group rest is 152867.00
+
+NOTE 6 [file /tmp/cerise_runner_p265gyi1/chunk_1/decompose.mdp]:
+  NVE simulation with an initial temperature of zero: will use a Verlet
+  buffer of 10%. Check your energy drift!
+
+
+There were 6 notes
+
+GROMACS reminds you: "Hey Man You Know, I'm Really OK" (Offspring)
+
+
+ERROR:root:[node065:31184] [[31532,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31532,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                      :-) GROMACS - gmx mdrun, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_p265gyi1/chunk_1
+Command line:
+  gmx_mpi mdrun -nice 0 -ntomp 16 -s /tmp/cerise_runner_p265gyi1/chunk_1/decompose.tpr -rerun /tmp/cerise_runner_p265gyi1/protein-MD.part0001.trr -deffnm decompose
+
+
+NOTE: Error occurred during GPU detection:
+      unknown error
+      Can not use GPU acceleration, will fall back to CPU kernels.
+
+
+Running on 1 node with total 16 cores, 32 logical cores, 0 compatible GPUs
+Hardware detected on host node065 (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+
+  Hardware topology: Basic
+
+Reading file /tmp/cerise_runner_p265gyi1/chunk_1/decompose.tpr, VERSION 2016.4 (single precision)
+Using 1 MPI process
+Using 16 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin thread to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+
+NOTE: Thread affinity setting failed. This can cause performance degradation.
+      If you think your settings are correct, ask on the gmx-users list.
+
+starting md rerun 'ref_conf_1', reading coordinates from input trajectory '/tmp/cerise_runner_p265gyi1/protein-MD.part0001.trr'
+
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   
+WARNING: Some frames do not contain velocities.
+         Ekin, temperature and pressure are incorrect,
+         the virial will be incorrect when constraints are present.
+
+Last frame          0 time    0.000   
+
+NOTE: 50 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        2.645        0.165     1600.0
+                 (ns/day)    (hour/ns)
+Performance:        0.523       45.923
+
+GROMACS reminds you: "We Can Dance Like Iggy Pop" (Red Hot Chili Peppers)
+
+
+INFO:root:--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+
+ERROR:root:[node065:31209] [[31509,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31509,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                      :-) GROMACS - gmx grompp, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_p265gyi1/chunk_2
+Command line:
+  gmx_mpi grompp -f /tmp/cerise_runner_p265gyi1/chunk_2/decompose.mdp -c /tmp/cerise_runner_p265gyi1/protein-sol.gro -p /tmp/cerise_runner_p265gyi1/protein-sol.top -n /tmp/cerise_runner_p265gyi1/chunk_2/decompose.ndx -o /tmp/cerise_runner_p265gyi1/chunk_2/decompose.tpr -maxwarn 2
+
+
+NOTE 1 [file /tmp/cerise_runner_p265gyi1/chunk_2/decompose.mdp, line 60]:
+  /tmp/cerise_runner_p265gyi1/chunk_2/decompose.mdp did not specify a value
+  for the .mdp option "cutoff-scheme". Probably it was first intended for
+  use with GROMACS before 4.6. In 4.6, the Verlet scheme was introduced,
+  but the group scheme was still the default. The default is now the Verlet
+  scheme, so you will observe different behaviour.
+
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+Replacing old mdp entry 'xtc-precision' by 'compressed-x-precision'
+
+NOTE 2 [file /tmp/cerise_runner_p265gyi1/chunk_2/decompose.mdp]:
+  With Verlet lists the optimal nstlist is >= 10, with GPUs >= 20. Note
+  that with the Verlet scheme, nstlist has no effect on the accuracy of
+  your simulation.
+
+
+NOTE 3 [file /tmp/cerise_runner_p265gyi1/chunk_2/decompose.mdp]:
+  For a correct single-point energy evaluation with nsteps = 0, use
+  continuation = yes to avoid constraining the input coordinates.
+
+Setting the LD random seed to -34574593
+Generated 1326 of the 1326 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 1326 of the 1326 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'ref_conf_1'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 3 bonded neighbours molecule type 'compound_2ac'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 1 bonded neighbours molecule type 'NA'
+Excluding 1 bonded neighbours molecule type 'CL'
+
+NOTE 4 [file protein-sol.top, line 73178]:
+  System has non-zero total charge: 6.999712
+  Total charge should normally be an integer. See
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+  
+
+
+
+NOTE 5 [file protein-sol.top, line 73178]:
+  For energy conservation with LINCS, lincs_iter should be 2 or larger.
+
+
+Removing all charge groups because cutoff-scheme=Verlet
+Number of degrees of freedom in T-Coupling group rest is 152867.00
+
+NOTE 6 [file /tmp/cerise_runner_p265gyi1/chunk_2/decompose.mdp]:
+  NVE simulation with an initial temperature of zero: will use a Verlet
+  buffer of 10%. Check your energy drift!
+
+
+There were 6 notes
+
+GROMACS reminds you: "I Could Take You Home and Abuse You" (Magnapop)
+
+
+ERROR:root:[node065:31219] [[31503,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31503,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                      :-) GROMACS - gmx mdrun, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_p265gyi1/chunk_2
+Command line:
+  gmx_mpi mdrun -nice 0 -ntomp 16 -s /tmp/cerise_runner_p265gyi1/chunk_2/decompose.tpr -rerun /tmp/cerise_runner_p265gyi1/protein-MD.part0001.trr -deffnm decompose
+
+
+NOTE: Error occurred during GPU detection:
+      unknown error
+      Can not use GPU acceleration, will fall back to CPU kernels.
+
+
+Running on 1 node with total 16 cores, 32 logical cores, 0 compatible GPUs
+Hardware detected on host node065 (the node of MPI rank 0):
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz
+    SIMD instructions most likely to fit this hardware: AVX2_256
+    SIMD instructions selected at GROMACS compile time: AVX2_256
+
+  Hardware topology: Basic
+
+Reading file /tmp/cerise_runner_p265gyi1/chunk_2/decompose.tpr, VERSION 2016.4 (single precision)
+Using 1 MPI process
+Using 16 OpenMP threads 
+
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin thread to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+
+NOTE: Thread affinity setting failed. This can cause performance degradation.
+      If you think your settings are correct, ask on the gmx-users list.
+
+starting md rerun 'ref_conf_1', reading coordinates from input trajectory '/tmp/cerise_runner_p265gyi1/protein-MD.part0001.trr'
+
+trr version: GMX_trn_file (single precision)
+Reading frame       0 time    0.000   
+WARNING: Some frames do not contain velocities.
+         Ekin, temperature and pressure are incorrect,
+         the virial will be incorrect when constraints are present.
+
+Last frame          0 time    0.000   
+
+NOTE: 66 % of the run time was spent in pair search,
+      you might want to increase nstlist (this has no effect on accuracy)
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        1.980        0.124     1600.0
+                 (ns/day)    (hour/ns)
+Performance:        0.698       34.367
+
+GROMACS reminds you: "Chemical gases filling lungs of little ones" (Black Eyed Peas)
+
+
+INFO:root:--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+
+/home/lveen/.cerise/api/mdstudio/files/energies/getEnergies.py:82: FutureWarning: Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass 'sort=False'.
+
+To retain the current behavior and silence the warning, pass 'sort=True'.
+
+  df = pandas.concat(rs)
+INFO:root:SUCCESSFUL COMPLETION OF THE PROGRAM

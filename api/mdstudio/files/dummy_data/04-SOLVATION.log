@@ -1,0 +1,434 @@
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi solvate -cp /tmp/cerise_runner_l0bwd4gb/protein-EMv.gro -cs -o protein-sol-b4ions.gro
+[node065:29312] [[28796,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[28796,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+                     :-) GROMACS - gmx solvate, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx solvate, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi solvate -cp /tmp/cerise_runner_l0bwd4gb/protein-EMv.gro -cs -o protein-sol-b4ions.gro
+
+Reading solute configuration
+ref_conf_1
+Containing 7795 atoms in 483 residues
+Reading solvent configuration
+216H2O,WATJP01,SPC216,SPC-MODEL,300K,BOX(M)=1.86206NM,WFVG,MAR. 1984
+Containing 648 atoms in 216 residues
+
+Initialising inter-atomic distances...
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary.
+
+NOTE: From version 5.0 gmx solvate uses the Van der Waals radii
+from the source below. This means the results may be different
+compared to previous GROMACS versions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+A. Bondi
+van der Waals Volumes and Radii
+J. Phys. Chem. 68 (1964) pp. 441-451
+-------- -------- --- Thank You --- -------- --------
+
+Generating solvent configuration
+Will generate new solvent configuration of 6x6x4 boxes
+Solvent box contains 84396 atoms in 28132 residues
+Removed 8103 solvent atoms due to solvent-solvent overlap
+Removed 7410 solvent atoms due to solute-solvent overlap
+Sorting configuration
+Found 1 molecule type:
+    SOL (   3 atoms): 22961 residues
+Generated solvent containing 68883 atoms in 22961 residues
+Writing generated configuration to protein-sol-b4ions.gro
+
+Output configuration contains 76678 atoms in 23444 residues
+Volume                 :      778.38 (nm^3)
+Density                :     1008.63 (g/l)
+Number of SOL molecules:  22962   
+
+
+GROMACS reminds you: "It takes money to make money, they say" (Lou Reed)
+
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi grompp -v -f empty.mdp -c protein-sol-b4ions.gro -p protein-sol-b4ions.top -o protein-sol-b4ions.tpr -po defaults.mdp -maxwarn -1
+[node065:29329] [[28781,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[28781,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+                      :-) GROMACS - gmx grompp, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi grompp -v -f empty.mdp -c protein-sol-b4ions.gro -p protein-sol-b4ions.top -o protein-sol-b4ions.tpr -po defaults.mdp -maxwarn -1
+
+
+NOTE 1 [file empty.mdp, line 2]:
+  empty.mdp did not specify a value for the .mdp option "cutoff-scheme".
+  Probably it was first intended for use with GROMACS before 4.6. In 4.6,
+  the Verlet scheme was introduced, but the group scheme was still the
+  default. The default is now the Verlet scheme, so you will observe
+  different behaviour.
+
+checking input for internal consistency...
+Setting the LD random seed to -1918142798
+Generated 1326 of the 1326 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 1326 of the 1326 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'ref_conf_1'
+Excluding 2 bonded neighbours molecule type 'SOL'
+Excluding 3 bonded neighbours molecule type 'compound_2ac'
+Excluding 2 bonded neighbours molecule type 'SOL'
+
+NOTE 2 [file protein-sol-b4ions.top, line 73176]:
+  System has non-zero total charge: 6.999712
+  Total charge should normally be an integer. See
+  http://www.gromacs.org/Documentation/Floating_Point_Arithmetic
+  for discussion on how close it should be to an integer.
+  
+
+
+processing coordinates...
+double-checking input for internal consistency...
+Removing all charge groups because cutoff-scheme=Verlet
+renumbering atomtypes...
+converting bonded parameters...
+initialising group options...
+processing index file...
+Making dummy/rest group for T-Coupling containing 76678 elements
+Making dummy/rest group for Acceleration containing 76678 elements
+Making dummy/rest group for Freeze containing 76678 elements
+Making dummy/rest group for Energy Mon. containing 76678 elements
+Making dummy/rest group for VCM containing 76678 elements
+Number of degrees of freedom in T-Coupling group rest is 161145.00
+Making dummy/rest group for User1 containing 76678 elements
+Making dummy/rest group for User2 containing 76678 elements
+Making dummy/rest group for Compressed X containing 76678 elements
+Making dummy/rest group for Or. Res. Fit containing 76678 elements
+Making dummy/rest group for QMMM containing 76678 elements
+T-Coupling       has 1 element(s): rest
+Energy Mon.      has 1 element(s): rest
+Acceleration     has 1 element(s): rest
+Freeze           has 1 element(s): rest
+User1            has 1 element(s): rest
+User2            has 1 element(s): rest
+VCM              has 1 element(s): rest
+Compressed X     has 1 element(s): rest
+Or. Res. Fit     has 1 element(s): rest
+QMMM             has 1 element(s): rest
+
+NOTE 3 [file empty.mdp]:
+  NVE simulation with an initial temperature of zero: will use a Verlet
+  buffer of 10%. Check your energy drift!
+
+Checking consistency between energy and charge groups...
+
+NOTE 4 [file empty.mdp]:
+  You are using a plain Coulomb cut-off, which might produce artifacts.
+  You might want to consider using PME electrostatics.
+
+
+writing run input file...
+
+There were 4 notes
+
+GROMACS reminds you: "Check Your Input" (D. Van Der Spoel)
+
+processing topology...
+Analysing residue names:
+There are:   479    Protein residues
+There are:     3      Other residues
+There are: 22962      Water residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+This run will generate roughly 6 Mb of data
+/home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi genion -s protein-sol-b4ions.tpr -o protein-sol.gro -n sol.ndx -pname NA -nname CL -np 63 -nn 63 -pq 1 -nq -1 -rmin 0.5
+[node065:29369] [[28741,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[28741,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+                      :-) GROMACS - gmx genion, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx genion, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi genion -s protein-sol-b4ions.tpr -o protein-sol.gro -n sol.ndx -pname NA -nname CL -np 63 -nn 63 -pq 1 -nq -1 -rmin 0.5
+
+Reading file protein-sol-b4ions.tpr, VERSION 2016.4 (single precision)
+Reading file protein-sol-b4ions.tpr, VERSION 2016.4 (single precision)
+Group     0 (            SOL) has 68883 elements
+There is one group in the index
+Number of (3-atomic) solvent molecules: 22961
+Using random seed 480292483.
+Replacing solvent molecule 19038 (atom 64909) with NA
+Replacing solvent molecule 10828 (atom 40279) with NA
+Replacing solvent molecule 16540 (atom 57415) with NA
+Replacing solvent molecule 1858 (atom 13369) with NA
+Replacing solvent molecule 7928 (atom 31579) with NA
+Replacing solvent molecule 21483 (atom 72244) with NA
+Replacing solvent molecule 6172 (atom 26311) with NA
+Replacing solvent molecule 11448 (atom 42139) with NA
+Replacing solvent molecule 20846 (atom 70333) with NA
+Replacing solvent molecule 21767 (atom 73096) with NA
+Replacing solvent molecule 16781 (atom 58138) with NA
+Replacing solvent molecule 17320 (atom 59755) with NA
+Replacing solvent molecule 5507 (atom 24316) with NA
+Replacing solvent molecule 22735 (atom 76000) with NA
+Replacing solvent molecule 18005 (atom 61810) with NA
+Replacing solvent molecule 22835 (atom 76300) with NA
+Replacing solvent molecule 9180 (atom 35335) with NA
+Replacing solvent molecule 15664 (atom 54787) with NA
+Replacing solvent molecule 13059 (atom 46972) with NA
+Replacing solvent molecule 4521 (atom 21358) with NA
+Replacing solvent molecule 4661 (atom 21778) with NA
+Replacing solvent molecule 14801 (atom 52198) with NA
+Replacing solvent molecule 14869 (atom 52402) with NA
+Replacing solvent molecule 10461 (atom 39178) with NA
+Replacing solvent molecule 7183 (atom 29344) with NA
+Replacing solvent molecule 20641 (atom 69718) with NA
+Replacing solvent molecule 19808 (atom 67219) with NA
+Replacing solvent molecule 9308 (atom 35719) with NA
+Replacing solvent molecule 20120 (atom 68155) with NA
+Replacing solvent molecule 11339 (atom 41812) with NA
+Replacing solvent molecule 21629 (atom 72682) with NA
+Replacing solvent molecule 13677 (atom 48826) with NA
+Replacing solvent molecule 14004 (atom 49807) with NA
+Replacing solvent molecule 568 (atom 9499) with NA
+Replacing solvent molecule 16993 (atom 58774) with NA
+Replacing solvent molecule 3423 (atom 18064) with NA
+Replacing solvent molecule 8502 (atom 33301) with NA
+Replacing solvent molecule 5283 (atom 23644) with NA
+Replacing solvent molecule 5757 (atom 25066) with NA
+Replacing solvent molecule 8631 (atom 33688) with NA
+Replacing solvent molecule 10562 (atom 39481) with NA
+Replacing solvent molecule 10553 (atom 39454) with NA
+Replacing solvent molecule 12821 (atom 46258) with NA
+Replacing solvent molecule 11362 (atom 41881) with NA
+Replacing solvent molecule 1042 (atom 10921) with NA
+Replacing solvent molecule 1400 (atom 11995) with NA
+Replacing solvent molecule 801 (atom 10198) with NA
+Replacing solvent molecule 19191 (atom 65368) with NA
+Replacing solvent molecule 6496 (atom 27283) with NA
+Replacing solvent molecule 389 (atom 8962) with NA
+Replacing solvent molecule 10202 (atom 38401) with NA
+Replacing solvent molecule 21282 (atom 71641) with NA
+Replacing solvent molecule 11460 (atom 42175) with NA
+Replacing solvent molecule 4301 (atom 20698) with NA
+Replacing solvent molecule 13277 (atom 47626) with NA
+Replacing solvent molecule 1886 (atom 13453) with NA
+Replacing solvent molecule 8271 (atom 32608) with NA
+Replacing solvent molecule 29 (atom 7882) with NA
+Replacing solvent molecule 447 (atom 9136) with NA
+Replacing solvent molecule 19026 (atom 64873) with NA
+Replacing solvent molecule 2095 (atom 14080) with NA
+Replacing solvent molecule 1686 (atom 12853) with NA
+Replacing solvent molecule 8108 (atom 32119) with NA
+Replacing solvent molecule 3681 (atom 18838) with CL
+Replacing solvent molecule 3378 (atom 17929) with CL
+Replacing solvent molecule 22577 (atom 75526) with CL
+Replacing solvent molecule 16657 (atom 57766) with CL
+Replacing solvent molecule 135 (atom 8200) with CL
+Replacing solvent molecule 12257 (atom 44566) with CL
+Replacing solvent molecule 15786 (atom 55153) with CL
+Replacing solvent molecule 10808 (atom 40219) with CL
+Replacing solvent molecule 3693 (atom 18874) with CL
+Replacing solvent molecule 1774 (atom 13117) with CL
+Replacing solvent molecule 16591 (atom 57568) with CL
+Replacing solvent molecule 7246 (atom 29533) with CL
+Replacing solvent molecule 22668 (atom 75799) with CL
+Replacing solvent molecule 8671 (atom 33808) with CL
+Replacing solvent molecule 12054 (atom 43957) with CL
+Replacing solvent molecule 9336 (atom 35803) with CL
+Replacing solvent molecule 7154 (atom 29257) with CL
+Replacing solvent molecule 3721 (atom 18958) with CL
+Replacing solvent molecule 11186 (atom 41353) with CL
+Replacing solvent molecule 5294 (atom 23677) with CL
+Replacing solvent molecule 5841 (atom 25318) with CL
+Replacing solvent molecule 15169 (atom 53302) with CL
+Replacing solvent molecule 6616 (atom 27643) with CL
+Replacing solvent molecule 6885 (atom 28450) with CL
+Replacing solvent molecule 9960 (atom 37675) with CL
+Replacing solvent molecule 3750 (atom 19045) with CL
+Replacing solvent molecule 18183 (atom 62344) with CL
+Replacing solvent molecule 5282 (atom 23641) with CL
+Replacing solvent molecule 5300 (atom 23695) with CL
+Replacing solvent molecule 1310 (atom 11725) with CL
+Replacing solvent molecule 13439 (atom 48112) with CL
+Replacing solvent molecule 20259 (atom 68572) with CL
+Replacing solvent molecule 4518 (atom 21349) with CL
+Replacing solvent molecule 8417 (atom 33046) with CL
+Replacing solvent molecule 20921 (atom 70558) with CL
+Replacing solvent molecule 21528 (atom 72379) with CL
+Replacing solvent molecule 20246 (atom 68533) with CL
+Replacing solvent molecule 11331 (atom 41788) with CL
+Replacing solvent molecule 10104 (atom 38107) with CL
+Replacing solvent molecule 13751 (atom 49048) with CL
+Replacing solvent molecule 20028 (atom 67879) with CL
+Replacing solvent molecule 12412 (atom 45031) with CL
+Replacing solvent molecule 6325 (atom 26770) with CL
+Replacing solvent molecule 1570 (atom 12505) with CL
+Replacing solvent molecule 18010 (atom 61825) with CL
+Replacing solvent molecule 5069 (atom 23002) with CL
+Replacing solvent molecule 7076 (atom 29023) with CL
+Replacing solvent molecule 15568 (atom 54499) with CL
+Replacing solvent molecule 9700 (atom 36895) with CL
+Replacing solvent molecule 2478 (atom 15229) with CL
+Replacing solvent molecule 1553 (atom 12454) with CL
+Replacing solvent molecule 7901 (atom 31498) with CL
+Replacing solvent molecule 8996 (atom 34783) with CL
+Replacing solvent molecule 5634 (atom 24697) with CL
+Replacing solvent molecule 15284 (atom 53647) with CL
+Replacing solvent molecule 5582 (atom 24541) with CL
+Replacing solvent molecule 16462 (atom 57181) with CL
+Replacing solvent molecule 21194 (atom 71377) with CL
+Replacing solvent molecule 849 (atom 10342) with CL
+Replacing solvent molecule 21360 (atom 71875) with CL
+Replacing solvent molecule 14459 (atom 51172) with CL
+Replacing solvent molecule 14981 (atom 52738) with CL
+Replacing solvent molecule 443 (atom 9124) with CL
+
+
+GROMACS reminds you: "Two guys can move very fast when they're motivated enough and unemployed" (Eric Betzig)
+
+Will try to add 63 NA ions and 63 CL ions.
+Select a continuous group of solvent molecules

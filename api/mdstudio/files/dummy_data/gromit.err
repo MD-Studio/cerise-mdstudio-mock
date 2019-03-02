@@ -1,0 +1,63 @@
+which: no gsed in (/cm/local/apps/cuda/libs/current/bin:/cm/shared/apps/cuda90/sdk/9.0.176/bin/x86_64/linux/release:/cm/shared/apps/cuda90/toolkit/9.0.176/bin:/cm/shared/apps/openmpi/gcc/64/1.8.1/bin:/cm/local/apps/gcc/6.3.0/bin:/home/lveen/.cerise/api/mdstudio/files/miniconda/bin:/home/lveen/.cerise/api/mdstudio/files/miniconda/envs/cerise/bin:/cm/shared/apps/slurm/17.02.2/sbin:/cm/shared/apps/slurm/17.02.2/bin:/cm/shared/apps/torque/6.1.1/bin:/cm/shared/apps/torque/6.1.1/sbin:/usr/local/bin:/usr/bin:/opt/ibutils/bin:/sbin:/usr/sbin:/cm/local/apps/environment-modules/3.2.10/bin)
+which: no voms-proxy-info in (/home/lveen/.cerise/api/mdstudio/files/gromacs/bin:/cm/local/apps/cuda/libs/current/bin:/cm/shared/apps/cuda90/sdk/9.0.176/bin/x86_64/linux/release:/cm/shared/apps/cuda90/toolkit/9.0.176/bin:/cm/shared/apps/openmpi/gcc/64/1.8.1/bin:/cm/local/apps/gcc/6.3.0/bin:/home/lveen/.cerise/api/mdstudio/files/miniconda/bin:/home/lveen/.cerise/api/mdstudio/files/miniconda/envs/cerise/bin:/cm/shared/apps/slurm/17.02.2/sbin:/cm/shared/apps/slurm/17.02.2/bin:/cm/shared/apps/torque/6.1.1/bin:/cm/shared/apps/torque/6.1.1/sbin:/usr/local/bin:/usr/bin:/opt/ibutils/bin:/sbin:/usr/sbin:/cm/local/apps/environment-modules/3.2.10/bin)
+cp: ‘/tmp/cerise_runner_l0bwd4gb/attype.itp’ and ‘./attype.itp’ are the same file
+cp: ‘/tmp/cerise_runner_l0bwd4gb/compound_ref.itp’ and ‘./compound_ref.itp’ are the same file
+cp: ‘/tmp/cerise_runner_l0bwd4gb/compound_ref-posre.itp’ and ‘./compound_ref-posre.itp’ are the same file
+cp: ‘/tmp/cerise_runner_l0bwd4gb/ref_conf_1-posre.itp’ and ‘./ref_conf_1-posre.itp’ are the same file
+[node065:29121] [[29501,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[29501,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+                     :-) GROMACS - gmx editconf, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx editconf, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi editconf -f /tmp/cerise_runner_l0bwd4gb/compound.pdb -o compound.pdb.gro
+
+
+GROMACS reminds you: "The time for theory is over" (J. Hajdu)
+
+[node065:29207] [[28907,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[28907,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+/usr/bin/sed -n -e /^Generated solvent/s/^.*in \(.*\) residues/\1/p 04-SOLVATION.log
+/usr/bin/sed -e /B4IONS/d;; protein-sol-b4ions.top
+[node065:29446] [[29178,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[29178,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+/usr/bin/sed -i -e s/^\( *#define \+POSREFC\).*$/\1 200/
+/usr/bin/sed: no input files
+[node065:29583] [[29043,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[29043,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+/usr/bin/sed -i -e s/^\( *#define \+POSREFC\).*$/\1 200/
+/usr/bin/sed: no input files
+[node065:29952] [[30716,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[30716,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+[node065:30214] [[29946,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[29946,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+[node065:30569] [[30101,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[30101,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+[node065:30830] [[31378,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[31378,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader

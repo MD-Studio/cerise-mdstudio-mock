@@ -1,0 +1,10 @@
+compute-resource:
+  refresh: 10
+  files:
+    protocol: local
+    path: /home/cerise/.cerise
+
+  jobs:
+    protocol: local
+    scheduler: directgnu
+    cwl-runner: $CERISE_API/mdstudio/files/mock_cwlrunner.py

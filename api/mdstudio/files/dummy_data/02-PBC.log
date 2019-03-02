@@ -1,0 +1,76 @@
+echo 0 0 0 | /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi editconf -f /tmp/cerise_runner_l0bwd4gb/protein-lig.gro -o protein-pbc.gro -bt dodecahedron -d 1.125 -c 
+: << __PBC__
+[node065:29157] [[29465,1],0] ORTE_ERROR_LOG: Data for specified key not found in file btl_usnic_cclient.c at line 88
+[node065][[29465,1],0][btl_usnic_cclient.c:89:ompi_btl_usnic_connectivity_client_init] usNIC connectivity client unable to db_fetch local leader
+--------------------------------------------------------------------------
+WARNING: It appears that your OpenFabrics subsystem is configured to only
+allow registering part of your physical memory.  This can cause MPI jobs to
+run with erratic performance, hang, and/or crash.
+
+This may be caused by your OpenFabrics vendor limiting the amount of
+physical memory that can be registered.  You should investigate the
+relevant Linux kernel module parameters that control how much physical
+memory can be registered, and increase them to allow registering all
+physical memory on your machine.
+
+See this Open MPI FAQ item for more information on these Linux kernel module
+parameters:
+
+    http://www.open-mpi.org/faq/?category=openfabrics#ib-locked-pages
+
+  Local host:              node065
+  Registerable memory:     32768 MiB
+  Total memory:            65441 MiB
+
+Your MPI job will continue, but may be behave poorly and/or hang.
+--------------------------------------------------------------------------
+                     :-) GROMACS - gmx editconf, 2016.4 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov  Herman J.C. Berendsen    Par Bjelkmar   
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra    Gerrit Groenhof  
+ Christoph Junghans   Anca Hamuraru    Vincent Hindriksen Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul   Magnus Lundborg   Pieter Meulenhoff    Erik Marklund   
+   Teemu Murtola       Szilard Pall       Sander Pronk      Roland Schulz   
+  Alexey Shvetsov     Michael Shirts     Alfons Sijbers     Peter Tieleman  
+  Teemu Virolainen  Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx editconf, version 2016.4
+Executable:   /home/lveen/.cerise/api/mdstudio/files/gromacs/bin/gmx_mpi
+Data prefix:  /home/lveen/.cerise/api/mdstudio/files/gromacs
+Working dir:  /tmp/cerise_runner_l0bwd4gb
+Command line:
+  gmx_mpi editconf -f /tmp/cerise_runner_l0bwd4gb/protein-lig.gro -o protein-pbc.gro -bt dodecahedron -d 1.125 -c
+
+
+GROMACS reminds you: "We Don't Bother Anyone" (LIVE)
+
+Read 7795 atoms
+Volume: 235.066 nm^3, corresponds to roughly 105700 electrons
+No velocities found
+    system size :  6.731  4.918  7.101 (nm)
+    diameter    :  8.075               (nm)
+    center      :  0.738  2.149  2.512 (nm)
+    box vectors :  6.731  4.918  7.101 (nm)
+    box angles  :  90.00  90.00  90.00 (degrees)
+    box volume  : 235.07               (nm^3)
+    shift       :  7.006  5.595  1.138 (nm)
+new center      :  7.744  7.744  3.651 (nm)
+new box vectors : 10.325 10.325 10.325 (nm)
+new box angles  :  60.00  60.00  90.00 (degrees)
+new box volume  : 778.38               (nm^3)
+__PBC__
